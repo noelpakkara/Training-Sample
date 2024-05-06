@@ -1,0 +1,25 @@
+
+  <div class="container-fluid bg-light py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">Employee List</h2>
+      <button class="btn btn-primary mb-3 float-end" (click)="addEmployee()">Add Employee</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees; let odd = odd" [class.table-primary]="odd" [class.table-secondary]="!odd">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.position }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="editEmployee(employee)">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

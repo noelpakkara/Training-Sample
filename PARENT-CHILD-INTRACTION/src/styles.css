@@ -1,0 +1,16 @@
+/* parent.component.css */
+
+.parent-container {
+    border: 2px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  /* child.component.css */
+  
+  .child-container {
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }

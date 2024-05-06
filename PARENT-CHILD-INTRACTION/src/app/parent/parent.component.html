@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2>Parent Component</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName" autocomplete="off">
+            </div>
+            <br>
+            <div>
+                <label *ngIf="company"><h5>Company : {{company}}</h5></label>
+            </div>
+            <br>
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="onButtonClick()">Send Data to Child</button>
+            </div>
+
+            <app-child [userData]="userDetails" (showWelcome)="displayWelcomeMessage($event)"></app-child>
+            
+        </div>
+    </div>
+</div>

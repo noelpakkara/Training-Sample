@@ -1,0 +1,18 @@
+<div class="card mt-3">
+    <div class="card-header">
+        <h2>Child Component</h2>
+    </div>
+    <div class="card-body">
+        <div *ngIf="userData">
+            <p>First Name: {{ userData.firstName }}</p>
+            <p>Last Name: {{ userData.lastName }}</p>
+        </div>
+        <div class="form-group">
+            <label for="companyName">Company Name:</label>
+            <input type="text" class="form-control" id="companyName" [(ngModel)]="companyName" #companyInput autocomplete="off">
+        </div>
+        
+        <br>
+        <button class="btn btn-success" (click)="onWelcomeClick()">Show Welcome in Parent</button>
+    </div>
+</div>
