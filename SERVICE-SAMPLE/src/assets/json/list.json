@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "iPhone 9",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "price": 54955
+  },
+  {
+    "id": 2,
+    "title": "iPhone X",
+    "brand": "Apple",
+    "category": "Smartphones",
+    "price": 122055
+  },
+  {
+    "id": 3,
+    "title": "Samsung Universe 9",
+    "brand": "Samsung",
+    "category": "Smartphones",
+    "price": 67920
+  },
+  {
+    "id": 4,
+    "title": "OPPOF19",
+    "brand": "OPPO",
+    "category": "Smartphones",
+    "price": 6773
+  }
+]

@@ -1,0 +1,134 @@
+<app-topbar></app-topbar>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 text-start">{{ title }} Details</div>
+    <div class="col-md-6 text-end">
+      <button
+        type="button"
+        class="btn btn-info"
+        data-bs-toggle="modal"
+        data-bs-target="#addDetailsModal"
+      >
+        Add Details
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <th>TITLE</th>
+
+            <th>BRAND</th>
+            <th>CATEGORY</th>
+            <th>PRICE</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detail of productDetails">
+            <td>{{ detail.title }}</td>
+
+            <td>{{ detail.brand }}</td>
+            <td>{{ detail.category }}</td>
+            <td>{{ detail.price }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary btn-sm mt-0"
+                (click)="onEdit(detail.id)"
+                data-bs-toggle="modal"
+                data-bs-target="#addDetailsModal"
+              >
+                Edit
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="onDelete(detail.id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addDetailsModal"
+  tabindex="-1"
+  aria-labelledby="addDetailsModalLabel"
+  aria-hidden="true"
+>
+  <div #addDetailsModal class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addDetailsModalLabel">Add Details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              [(ngModel)]="newProductDetail.title"
+              name="title"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="brand"
+              [(ngModel)]="newProductDetail.brand"
+              name="brand"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input
+              type="text"
+              class="form-control"
+              id="category"
+              [(ngModel)]="newProductDetail.category"
+              name="category"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              [(ngModel)]="newProductDetail.price"
+              name="price"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
