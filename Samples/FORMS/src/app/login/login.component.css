@@ -1,0 +1,15 @@
+.bgImage {
+  background-size: cover;
+  height: 100vh;
+  background-image: url("../../assets/images/loginbg.jpg");
+}
+
+label {
+  color: #ffffff;
+  margin: 10px 0px 10px;
+}
+
+.form-color {
+  background-color: #011a3873;
+  margin-top: 30%;
+}

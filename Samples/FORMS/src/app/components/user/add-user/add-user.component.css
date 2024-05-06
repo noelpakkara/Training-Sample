@@ -1,0 +1,24 @@
+.bgImage {
+  background-size: cover;
+  height: calc(100vh - 100px);
+  background-image: url("../../../../assets/images/loginbg.jpg");
+  color: #ffffff;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 3rem; /* Adjust as needed */
+  height: 5rem; /* Adjust as needed */
+}
+
+.error-message {
+  display: none;
+  height: 2em; /* Set a fixed height for the error message container */
+}
+
+.error-message::before {
+  content: "** ";
+}

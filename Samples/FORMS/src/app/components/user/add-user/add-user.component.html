@@ -1,0 +1,150 @@
+<div class="bgImage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="offset-md-6 col-md-4 mt-5">
+        <form #userData="ngForm" (ngSubmit)="onSubmit(userData)">
+          <div class="pt-5">
+            <div class="form-group mb-4">
+              <label for="firstName">First name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                name="firstName"
+                ngModel
+                required
+                minlength="2"
+              />
+              <div
+                class="text-danger error-message"
+                *ngIf="
+                  userData.controls['firstName']?.errors?.['required'] &&
+                  (userData.controls['firstName']?.dirty ||
+                    userData.controls['firstName']?.touched)
+                "
+                class="text-danger"
+              >
+                First name is required.
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                name="lastName"
+                ngModel
+                required
+                minlength="2"
+              />
+              <div
+                *ngIf="
+                  userData.controls['lastName']?.errors?.['required'] &&
+                  (userData.controls['lastName']?.dirty ||
+                    userData.controls['lastName']?.touched)
+                "
+                class="text-danger"
+              >
+                Last name is required.
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                name="email"
+                ngModel
+                required
+                email
+              />
+              <div
+                *ngIf="
+                  userData.controls['email']?.errors?.['required'] &&
+                  (userData.controls['email']?.dirty ||
+                    userData.controls['email']?.touched)
+                "
+                class="text-danger"
+              >
+                Email is required.
+              </div>
+              <div
+                *ngIf="
+                  userData.controls['email']?.errors?.['email'] &&
+                  (userData.controls['email']?.dirty ||
+                    userData.controls['email']?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="phoneNumber">Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                class="form-control"
+                name="phoneNumber"
+                ngModel
+                required
+                pattern="[0-9]{10}"
+              />
+              <div
+                *ngIf="
+                  userData.controls['phoneNumber']?.errors?.['required'] &&
+                  (userData.controls['phoneNumber']?.dirty ||
+                    userData.controls['phoneNumber']?.touched)
+                "
+                class="text-danger"
+              >
+                Phone number is required.
+              </div>
+              <div
+                *ngIf="userData.controls['phoneNumber']?.errors?.['pattern'] && (userData.controls['phoneNumber']?.dirty || userData.controls['phoneNumber']?.touched)"
+                class="text-danger"
+              >
+                Please enter a valid 10-digit phone number.
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="role">Role</label>
+
+              <select
+                id="role"
+                class="form-control"
+                name="role"
+                [(ngModel)]="selectedRole"
+                required
+              >
+                <option value="" disabled selected>Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+              </select>
+              <div
+                *ngIf="
+                  userData.controls['role']?.errors?.['required'] &&
+                  (userData.controls['role']?.dirty ||
+                    userData.controls['role']?.touched)
+                "
+                class="text-danger"
+              >
+                Role is required.
+              </div>
+            </div>
+            <button
+              class="btn w-100 mt-5 btn-primary font-weight-bold btn-lg"
+              type="submit"
+              [disabled]="!userData.valid"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer"><app-footer></app-footer></div>
